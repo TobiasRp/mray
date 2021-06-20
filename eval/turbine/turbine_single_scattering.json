@@ -1,0 +1,68 @@
+{
+  "parent_file": "eval/turbine/turbine.json",
+  "output": "results/",
+  "artifacts": "[reference, reconstruct, ref_rec_ss]",
+
+  "common": {
+    "preintegration_step_size_factor": 300.0,
+    "step_size": 0.001,
+    "step_size_write_samples": 0.002,
+    "smoothing_length": 0.003,
+    "data_min": -0.1,
+    "data_max": 0.1,
+    "bias": 1e-4
+  },
+
+  "reference": {
+    "medium_emission": 0.6,
+    "medium_scattering": 0.35
+  },
+
+  "ref_rec_ss": {
+    "medium_emission": 0.6,
+    "medium_scattering": 0.35
+  },
+
+  "reconstruction": {
+    "medium_emission": 0.6,
+    "medium_scattering": 0.35
+  },
+
+  "generate_single-scattering": {
+    "width": 512,
+    "height": 512,
+    "num_moments": 50,
+    "compact_image": 1,
+    "transform_to_bounds": 1,
+    "transform_bound_eps": 0.005,
+    "prediction_coding": 1,
+    "coding_warp": 0,
+    "entropy_coding": 1,
+    "compress": 1,
+    "quantization_bits": 10,
+    "error_threshold": 0.01
+  },
+
+  "use_single-scattering": {
+    "ss_enable": 1,
+    "ss_use_cache": 1,
+    "ss_step_size_factor": 4,
+    "ss_cache_size_x": 256,
+    "ss_cache_size_y": 128,
+    "ss_cache_size_z": 128,
+    "ss_henyey_greenstein_g": 0.0,
+    "ss_intensity_r": 0.28,
+    "ss_intensity_g": 0.28,
+    "ss_intensity_b": 0.28
+  },
+
+  "frames": {
+    "frame": {
+      "camera": "eval/turbine/config/camera_ss.txt",
+      "tf": "eval/turbine/config/tf_ss.bin",
+      "light": "eval/turbine/config/light_upper_right_corner.txt",
+      "t": 0,
+      "variable": "V"
+    }
+  }
+}

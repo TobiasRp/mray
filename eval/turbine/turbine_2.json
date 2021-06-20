@@ -1,0 +1,18 @@
+{
+  "parent_file": "eval/turbine/turbine.json",
+  "output": "results/",
+  "artifacts": "[reference, reconstruct, fourier]",
+
+  "common": {
+    "preintegration_step_size_factor": 200.0
+  },
+
+  "frames": {
+    "frame": {
+      "camera": "eval/turbine/config/camera_1.txt",
+      "tf": "eval/turbine/config/tf_2.bin",
+      "t": 0,
+      "variable": "V"
+    }
+  }
+}

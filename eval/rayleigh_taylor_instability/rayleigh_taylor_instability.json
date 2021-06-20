@@ -1,0 +1,56 @@
+{
+  "dataset": "data/rti.nc",
+  "output": "results/",
+  "artifacts": "[reference, reconstruct, fourier, error-bounds]",
+  "perf_logging": true,
+
+  "common": {
+    "preintegration_step_size_factor": 1.0,
+    "step_size": 1.0,
+    "data_min": 1.0,
+    "data_max": 3.0,
+    "bias": 5e-4
+  },
+
+  "reference": {
+    "width": 1024,
+    "height": 768,
+    "early_ray_termination": 0.95,
+    "medium_emission": 0.6
+  },
+
+  "generation": {
+    "width": 1024,
+    "height": 768,
+    "num_moments": 100,
+    "transform_to_bounds": 1,
+    "transform_bound_eps": 0.005,
+    "compact_image": 1,
+    "prediction_coding": 1,
+    "coding_warp": 0,
+    "entropy_coding": 1,
+    "compress": 1,
+    "quantization_bits": 10,
+    "error_threshold": 0.01
+  },
+
+  "reconstruction": {
+    "early_ray_termination": 0.95,
+    "medium_emission": 0.6
+  },
+
+  "reconstruction_fourier": {
+  },
+
+  "error_bounds": {
+  },
+
+  "frames": {
+    "frame": {
+      "camera": "eval/rayleigh_taylor_instability/config/camera.txt",
+      "tf": "eval/rayleigh_taylor_instability/config/tf.bin",
+      "t": 0,
+      "variable": "s"
+    }
+  }
+}

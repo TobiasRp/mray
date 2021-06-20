@@ -1,0 +1,6 @@
+{
+  "mray_path": "build/",
+  "build_cmd": "make",
+  "logging": true,
+  "log_params": true
+}

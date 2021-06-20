@@ -1,0 +1,10 @@
+# Only for building the project!
+
+FROM ubuntu:20.04
+MAINTAINER Tobias Rapp <tobias.rapp@kit.edu>
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get -y upgrade && \
+    apt-get install -y build-essential cmake g++-8 libhdf5-dev \
+                        liblz4-dev wget git libnetcdf-dev ninja-build

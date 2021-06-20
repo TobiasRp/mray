@@ -1,0 +1,29 @@
+{
+  "parent_file": "eval/turbine/turbine.json",
+  "output": "results/",
+  "artifacts": "[generate, reconstruct, resampled]",
+
+  "reconstruction_resampled": {
+    "res_use_cache": 0,
+    "res_camera_path": "eval/turbine/config/",
+    "res_camera_first": 10,
+    "res_camera_num": 1,
+    "res_width": 1024,
+    "res_height": 768,
+    "res_x": 512,
+    "res_y": 350,
+    "res_z": 350,
+    "upsample_x": 2,
+    "upsample_y": 2
+  },
+
+  "frames": {
+    "frame": {
+      "camera": "eval/turbine/config/camera_projected.txt",
+      "tf": "eval/turbine/config/tf_1.bin",
+      "light": "eval/turbine/config/light_1.txt",
+      "t": 0,
+      "variable": "V"
+    }
+  }
+}

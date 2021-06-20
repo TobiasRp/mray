@@ -1,0 +1,75 @@
+{
+  "dataset": "data/Turbine.h5part",
+  "output": "results/",
+  "artifacts": "[reference, reconstruct, error-bounds, fourier, rayhistogram]",
+
+  "common": {
+    "preintegration_step_size_factor": 400.0,
+    "step_size": 0.001,
+    "step_size_write_samples": 0.002,
+    "smoothing_length": 0.003,
+    "data_min": -0.5,
+    "data_max": 0.5,
+    "bias": 1e-5
+  },
+
+  "reference": {
+    "width": 1024,
+    "height": 768,
+    "medium_emission": 1.0,
+    "early_ray_termination": 0.95
+  },
+
+  "generation": {
+    "width": 1024,
+    "height": 768,
+    "num_moments": 100,
+    "compact_image": 1,
+    "transform_to_bounds": 1,
+    "transform_bound_eps": 0.005,
+    "prediction_coding": 1,
+    "coding_warp": 0,
+    "entropy_coding": 1,
+    "compress": 1,
+    "quantization_bits": 10,
+    "error_threshold": 0.01
+  },
+
+  "reconstruction": {
+    "early_ray_termination": 0.95,
+    "medium_emission": 1.0
+  },
+
+  "reconstruction_fourier": {
+  },
+
+  "error_bounds": {
+  },
+
+  "rayhist_generation": {
+    "width": 1024,
+    "height": 768,
+    "entropy_threshold": 0.02,
+    "compress": 1
+  },
+
+  "rayhist_reconstruction": {
+    "num_samples": 1536,
+    "early_ray_termination": 0.95,
+    "medium_emission": 1.0
+  },
+
+  "uncertainty_interpolation": {
+    "bound_interpolation": [0, 1.0]
+  },
+
+  "frames": {
+    "frame": {
+      "camera": "eval/turbine/config/camera_1.txt",
+      "tf": "eval/turbine/config/tf_1.bin",
+      "light": "eval/turbine/config/light_1.txt",
+      "t": 0,
+      "variable": "V"
+    }
+  }
+}

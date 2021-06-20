@@ -1,0 +1,97 @@
+{
+  "dataset": "data/marschner_lobb.nc",
+  "output": "results/",
+  "artifacts": "[reference, reconstruct]",
+  "perf_logging": true,
+
+  "common": {
+    "preintegration_step_size_factor": 50.0,
+    "step_size": 0.005,
+    "bias": 5e-5
+  },
+
+  "reference": {
+    "width": 1024,
+    "height": 768,
+    "early_ray_termination": 0.99,
+    "medium_emission": 1.0,
+    "medium_scattering": 0.5
+  },
+
+  "generation": {
+    "width": 1024,
+    "height": 768,
+    "num_moments": 100,
+    "transform_to_bounds": 1,
+    "transform_bound_eps": 0.005,
+    "compact_image": 1,
+    "prediction_coding": 1,
+    "compress": 1,
+    "entropy_coding": 1,
+    "quantization_bits": 10,
+    "error_threshold": 0.01
+  },
+
+  "reconstruction": {
+    "early_ray_termination": 0.99,
+    "medium_emission": 1.0,
+    "medium_scattering": 0.5
+  },
+
+  "reconstruction_fourier": {
+  },
+
+  "error_bounds": {
+    "error_percentile": 95
+  },
+
+  "uncertainty_interpolation": {
+    "bound_interpolation": [0, 1.0]
+  },
+
+  "rayhist_generation": {
+    "width": 1024,
+    "height": 768,
+    "entropy_threshold": 0.02
+  },
+
+  "rayhist_reconstruction": {
+    "num_samples": 1536,
+    "early_ray_termination": 0.99,
+    "medium_emission": 1.0
+  },
+
+  "generate_single-scattering": {
+    "width": 512,
+    "height": 512,
+    "num_moments": 50,
+    "compact_image": 1,
+    "prediction_coding": 1,
+    "compress": 1,
+    "quantization_bits": 10,
+    "error_threshold": 0.01
+  },
+
+  "use_single-scattering": {
+    "ss_enable": 0,
+    "ss_use_cache": 1,
+    "ss_cache_size_x": 128,
+    "ss_cache_size_y": 128,
+    "ss_cache_size_z": 128,
+    "ss_step_size_factor": 1.0,
+    "ss_henyey_greenstein_g": 0.2,
+    "ss_intensity_r": 0.4,
+    "ss_intensity_g": 0.4,
+    "ss_intensity_b": 0.4
+  },
+
+  "frames": {
+    "frame": {
+      "camera": "eval/marschner_lobb/config/camera.txt",
+      "light": "eval/marschner_lobb/config/light.txt",
+      "tf": "eval/marschner_lobb/config/tf.bin",
+      "t": 0,
+      "variable": "ImageFile"
+    }
+  }
+}

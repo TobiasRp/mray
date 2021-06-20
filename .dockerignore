@@ -1,0 +1,14 @@
+eval/__pycache__/*
+eval/.idea/*
+eval/.ipynb_checkpoints/*
+eval/venv/*
+eval/richtmyer_meshkov/*
+eval/rayleigh_taylor_instability/*
+eval/turbine/*
+*frame*.bin
+*.ppm
+*.png
+build/*
+data/rti.nc
+data/richtmyer_meshkov.nc
+

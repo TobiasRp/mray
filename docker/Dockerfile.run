@@ -1,0 +1,34 @@
+# For building AND running the project!
+
+FROM ubuntu:20.04
+MAINTAINER Tobias Rapp <tobias.rapp@kit.edu>
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get -y upgrade && \
+    apt-get install -y build-essential cmake g++-8 libhdf5-dev \
+                       liblz4-dev wget git libnetcdf-dev \
+			python3 python3-pil python3-numpy
+
+# Copy source
+RUN mkdir /mray && mkdir /mray/data
+COPY cmake /mray/cmake
+COPY CMakeLists.txt /mray/
+COPY src /mray/src
+
+COPY eval/eval.py /mray/eval/
+COPY eval/eval_parameters.py /mray/eval
+COPY eval/mray_cli.py /mray/eval/
+COPY eval/config.json /mray/eval/
+
+# Copy configuration to run
+COPY eval/marschner_lobb/marschner_lobb.json /mray/eval/marschner_lobb/
+COPY eval/marschner_lobb/config/ /mray/eval/marschner_lobb/config/
+
+# Copy dataset
+COPY data/marschner_lobb.nc /mray/data/marschner_lobb.nc
+
+# Compile!
+RUN mkdir /mray/build && cd /mray/build/ .. && make -j8
+
+WORKDIR /mray
