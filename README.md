@@ -1,6 +1,7 @@
 # Image-based Visualization of Large Volumetric Data Using Moments
 
-This is a prototype implementation of the paper. It does not contain an interactive environment - only a command line tool to generate and render moment images.
+This is a prototype implementation of the chapter in my dissertation (DOI: 10.5445/IR/1000131767).
+It does not contain an interactive environment - only a command line tool to generate and render moment images.
 
 ### Building the project
 
@@ -18,7 +19,7 @@ Then proceed with the build:
 - Use cmake to prepare the build:
 `mkdir build && cd build && cmake ..`
 
-- Build it! `make -j4`
+- Build it: `make -j4`
 
 ### Build and run with docker
 
@@ -66,7 +67,7 @@ For example, run the Marschner-Lobb dataset with:
 	Add `--cuda` to use GPU acceleration.
 
 
-These json configuration files can be added by hand and are set to the parameters we used for the paper.
+These json configuration files can be edited by hand and are set to the parameters we used for the paper.
 
 There are some general configurations available in `eval/config.json` that specify the path to the c++ binary and the build command (e.g. make).
 
