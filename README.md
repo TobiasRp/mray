@@ -1,6 +1,6 @@
 # Image-based Visualization of Large Volumetric Data Using Moments
 
-This is a prototype implementation of the chapter in my dissertation (DOI: 10.5445/IR/1000131767).
+This is a prototype implementation of the chapter in my PhD thesis (DOI: 10.5445/IR/1000131767).
 It does not contain an interactive environment - only a command line tool to generate and render moment images.
 
 ### Building the project
@@ -19,7 +19,7 @@ Then proceed with the build:
 - Use cmake to prepare the build:
 `mkdir build && cd build && cmake ..`
 
-- Build it: `make -j4`
+- Build it: `make`
 
 ### Build and run with docker
 
